@@ -17,28 +17,6 @@
 \newpage
 
 \section{Exploration}
-IDEA 1
-T-test
-
-Does the FIDE rating of the top 100 US chess players have a correlation with their USCF ratings?
-
-The null hypothesis is there is no correlation between FIDE rating and USCF rating.
-
-Top 100 US Chess players as of October: (USCF)
-\url{http://www.uschess.org/component/option,com_top_players/Itemid,371?op=list&month=1910&f=usa&l=R:Top%20Overall.&h=Overall}
-
-FIDE ratings are located:
-\url{https://ratings.fide.com/top_lists.phtml}
-
-IDEA 2
-How does the US Top 10 players compare with 10 other countries top 10?
-ANOVA
-
-The null hypothesis is that there is not a significant difference in mean rating among the 10 countries.
-
-FIDE ratings can be found at 
-\url{https://ratings.fide.com/top_lists.phtml}
-
 \subsection{Introduction}
 As a young child, I've always been interested in the idea of quantifying and relating objects using numbers. This was initially a usefool tool in visualizing basic arithmetic. When I started playing tournament chess, I recieved a chess rating, or a number used to quantify one's chess strength relative to others. There are multiple such systems that give chess player ratings, for example online chess websites such as Lichess and Chess.com have their own rating systems, and even countries have their own rating systems. However, the governing body of chess, FIDE, has their own rating system that allows a standard rating for comparison between countries with otherwise different rating systems. This led to the foci of the investigation on how FIDE ratings compare to USCF ratings with respect to the top 10 players in the US and also comparing the strengths of the top 10 players of the top 10 countries.
 \subsection{Research Questions}
@@ -79,29 +57,6 @@ Additionally, it is important to note that the USCF top player list was accurate
 
 \begin{table}
 \begin{center}
-\begin{tabular}{rrrrrrrrrr}
-Russia & USA & China & India & Ukraine & Armenia & Azerbaijan & Hungary & France & Poland\\
-\hline
-2777 & 2822 & 2805 & 2758 & 2698 & 2773 & 2770 & 2758 & 2770 & 2758\\
-2774 & 2765 & 2758 & 2721 & 2685 & 2689 & 2765 & 2696 & 2679 & 2725\\
-2753 & 2758 & 2732 & 2716 & 2685 & 2663 & 2668 & 2663 & 2651 & 2639\\
-2752 & 2736 & 2726 & 2654 & 2678 & 2642 & 2666 & 2649 & 2640 & 2619\\
-2747 & 2712 & 2705 & 2648 & 2662 & 2641 & 2659 & 2626 & 2633 & 2614\\
-2731 & 2683 & 2683 & 2639 & 2660 & 2641 & 2625 & 2621 & 2625 & 2611\\
-2726 & 2677 & 2669 & 2638 & 2650 & 2632 & 2622 & 2620 & 2604 & 2609\\
-2723 & 2673 & 2667 & 2637 & 2644 & 2617 & 2609 & 2617 & 2603 & 2603\\
-2705 & 2660 & 2664 & 2636 & 2634 & 2613 & 2598 & 2595 & 2600 & 2601\\
-2704 & 2659 & 2640 & 2630 & 2631 & 2611 & 2538 & 2593 & 2572 & 2589\\
-\end{tabular}
-    \caption{Top 10 Countries and their top 10 players}
-\end{center}
-\end{table}
-
-
-\subsection{Data Processing}
-\subsubsection{T-Test}
-\begin{table}
-\begin{center}
 \begin{tabular}{rr}
 Standard Deviation & Mean\\
 \hline
@@ -110,7 +65,6 @@ Standard Deviation & Mean\\
     \caption{FIDE rating}
 \end{center}
 \end{table}
-
 
 
 \begin{table}
@@ -124,6 +78,9 @@ Standard Deviation & Mean\\
 \end{center}
 \end{table}
 
+
+\subsection{Data Processing}
+\subsubsection{T-Test}
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
@@ -151,7 +108,7 @@ coordinates {(FIDE, 2715) +-(0,108) (USCF, 2791) +-(0,108)
 \caption{FIDE and USCF Ratings}
 \end{figure}
 
-Null Hypothesis: There is not a significant differece between the mean FIDE rating and the mean USCF rating.
+Null Hypothesis: There is not a significant differece (no correlation?) between the mean FIDE rating and the mean USCF rating.
 
 Alternate Hypothesis: There is a significant differrence between the mean FIDE rating and the mean USCF rating. 
 
@@ -166,6 +123,26 @@ p-value: P(t \(\leq\) -3.16) = 0.005
 Because the p-value is less than 0.05, the null hypothesis cannot be accepted. Therefore, we provisionally accept the alternate hypothsis that there is a significant difference between USCF and FIDE ratings.
 
 \subsubsection{ANOVA Test}
+\begin{table}
+\begin{center}
+\begin{tabular}{rrrrrrrrrr}
+Russia & USA & China & India & Ukraine & Armenia & Azerbaijan & Hungary & France & Poland\\
+\hline
+2777 & 2822 & 2805 & 2758 & 2698 & 2773 & 2770 & 2758 & 2770 & 2758\\
+2774 & 2765 & 2758 & 2721 & 2685 & 2689 & 2765 & 2696 & 2679 & 2725\\
+2753 & 2758 & 2732 & 2716 & 2685 & 2663 & 2668 & 2663 & 2651 & 2639\\
+2752 & 2736 & 2726 & 2654 & 2678 & 2642 & 2666 & 2649 & 2640 & 2619\\
+2747 & 2712 & 2705 & 2648 & 2662 & 2641 & 2659 & 2626 & 2633 & 2614\\
+2731 & 2683 & 2683 & 2639 & 2660 & 2641 & 2625 & 2621 & 2625 & 2611\\
+2726 & 2677 & 2669 & 2638 & 2650 & 2632 & 2622 & 2620 & 2604 & 2609\\
+2723 & 2673 & 2667 & 2637 & 2644 & 2617 & 2609 & 2617 & 2603 & 2603\\
+2705 & 2660 & 2664 & 2636 & 2634 & 2613 & 2598 & 2595 & 2600 & 2601\\
+2704 & 2659 & 2640 & 2630 & 2631 & 2611 & 2538 & 2593 & 2572 & 2589\\
+\end{tabular}
+    \caption{Top 10 Countries and their top 10 players}
+\end{center}
+\end{table}
+
 Null Hypothesis: There is not a significant difference in mean ratings among the ten countries. 
 
 Alternate Hypothesis: There is a significant difference in mean ratings among the ten countries. 
@@ -190,7 +167,11 @@ Works Cited
 \end{center}
 
 
+\url{https://ratings.fide.com/top_lists.phtml}
 
+
+Top 100 US Chess players as of October: (USCF)
+\url{http://www.uschess.org/component/option,com_top_players/Itemid,371?op=list&month=1910&f=usa&l=R:Top%20Overall.&h=Overall}
 
 
 

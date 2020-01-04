@@ -17,28 +17,6 @@
 \newpage
 
 \section{Exploration}
-IDEA 1
-T-test
-
-Does the FIDE rating of the top 100 US chess players have a correlation with their USCF ratings?
-
-The null hypothesis is there is no correlation between FIDE rating and USCF rating.
-
-Top 100 US Chess players as of October: (USCF)
-\url{http://www.uschess.org/component/option,com_top_players/Itemid,371?op=list&month=1910&f=usa&l=R:Top%20Overall.&h=Overall}
-
-FIDE ratings are located:
-\url{https://ratings.fide.com/top_lists.phtml}
-
-IDEA 2
-How does the US Top 10 players compare with 10 other countries top 10?
-ANOVA
-
-The null hypothesis is that there is not a significant difference in mean rating among the 10 countries.
-
-FIDE ratings can be found at 
-\url{https://ratings.fide.com/top_lists.phtml}
-
 \subsection{Introduction}
 As a young child, I've always been interested in the idea of quantifying and relating objects using numbers. This was initially a usefool tool in visualizing basic arithmetic. When I started playing tournament chess, I recieved a chess rating, or a number used to quantify one's chess strength relative to others. There are multiple such systems that give chess player ratings, for example online chess websites such as Lichess and Chess.com have their own rating systems, and even countries have their own rating systems. However, the governing body of chess, FIDE, has their own rating system that allows a standard rating for comparison between countries with otherwise different rating systems. This led to the foci of the investigation on how FIDE ratings compare to USCF ratings with respect to the top 10 players in the US and also comparing the strengths of the top 10 players of the top 10 countries.
 \subsection{Research Questions}
@@ -79,6 +57,29 @@ Additionally, it is important to note that the USCF top player list was accurate
 
 \begin{table}
 \begin{center}
+\begin{tabular}{rr}
+Standard Deviation & Mean\\
+\hline
+54 & 2715\\
+\end{tabular}
+    \caption{FIDE rating}
+\end{center}
+\end{table}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{rr}
+Standard Deviation & Mean\\
+\hline
+54 & 2791\\
+\end{tabular}
+    \caption{USCF rating}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
 \begin{tabular}{rrrrrrrrrr}
 Russia & USA & China & India & Ukraine & Armenia & Azerbaijan & Hungary & France & Poland\\
 \hline
@@ -100,24 +101,6 @@ Russia & USA & China & India & Ukraine & Armenia & Azerbaijan & Hungary & France
 
 \subsection{Data Processing}
 \subsubsection{T-Test}
-
-\begin{center}
-\begin{tabular}{rr}
-Standard Deviation & Mean\\
-\hline
-54 & 2715\\
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{rr}
-Standard Deviation & Mean\\
-\hline
-54 & 2791\\
-\end{tabular}
-\end{center}
-
-
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
@@ -145,7 +128,7 @@ coordinates {(FIDE, 2715) +-(0,108) (USCF, 2791) +-(0,108)
 \caption{FIDE and USCF Ratings}
 \end{figure}
 
-Null Hypothesis: There is not a significant differece between the mean FIDE rating and the mean USCF rating.
+Null Hypothesis: There is not a significant differece (no correlation?) between the mean FIDE rating and the mean USCF rating.
 
 Alternate Hypothesis: There is a significant differrence between the mean FIDE rating and the mean USCF rating. 
 
@@ -184,7 +167,11 @@ Works Cited
 \end{center}
 
 
+\url{https://ratings.fide.com/top_lists.phtml}
 
+
+Top 100 US Chess players as of October: (USCF)
+\url{http://www.uschess.org/component/option,com_top_players/Itemid,371?op=list&month=1910&f=usa&l=R:Top%20Overall.&h=Overall}
 
 
 
