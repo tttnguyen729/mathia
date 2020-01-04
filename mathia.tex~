@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-
+\usepackage{indentfirst}
 \usepackage{hyperref}
 
 \title{Math IA Rough Draft}
@@ -15,7 +15,6 @@
 
 \section{Exploration}
 IDEA 1
-
 T-test
 
 Does the FIDE rating of the top 100 US chess players have a correlation with their USCF ratings?
@@ -27,8 +26,6 @@ Top 100 US Chess players as of October: (USCF)
 
 FIDE ratings are located:
 \url{https://ratings.fide.com/top_lists.phtml}
-
-
 
 IDEA 2
 
@@ -54,6 +51,28 @@ I predict that there will be a statistically significant difference between the 
 
 \section{Analysis}
 \subsection{Data}
+\subsubsection{USCF vs FIDE}
+Suprisingly, the top 10 players by USCF rating differ from FIDE's list of the top 10 US players by FIDE rating. This difference is due to the fact that FIDE and USCF tournaments have different criteria for a tournament to be valid. Due to this, we will find the respective USCF ratings of the top 10 US players by FIDE rating. Nevertheless, the top players American players by FIDE and USCF rating are the same, just in different order.
+
+\begin{center}
+\begin{tabular}{rr}
+FIDE & USCF\\
+\hline
+2822 & 2894\\
+2765 & 2826\\
+2758 & 2834\\
+2736 & 2836\\
+2712 & 2787\\
+2683 & 2744\\
+2677 & 2758\\
+2673 & 2749\\
+2660 & 2733\\
+2659 & 2748\\
+\end{tabular}
+\end{center}
+
+Additionally, it is important to note that the USCF top player list was accurate as of December 2019 and the FIDE list was accurate as of January 2020. 
+
 \subsection{Data Processing}
 \subsubsection{T-Test}
 \subsubsection{ANOVA Test}
@@ -61,8 +80,9 @@ I predict that there will be a statistically significant difference between the 
 \section{Evaluation}
 \subsection{Data based answer to the research question}
 \subsection{Extensions}
+It would also be interesting to look at countries concentration of grandmasters, international masters, as well as titled players as a measure of strength. 
 
-
+It would also be interesting to see which country's rating system is most similar to FIDE ratings.
 
 
 
