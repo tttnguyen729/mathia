@@ -4,6 +4,7 @@
 \usepackage{hyperref}
 \usepackage{pgfplots}
 \usepackage{float}
+\usepackage{amsmath}
 
 \title{Math IA Rough Draft}
 \author{hyg172}
@@ -137,8 +138,20 @@ coordinates {(FIDE, 2715) +-(0,108) (USCF, 2791) +-(0,108)
 \caption{FIDE and USCF Ratings}
 \end{figure}
 
+Null Hypothesis: There is not a significant differece between the mean FIDE rating and the mean USCF rating.
 
+Alternate Hypothesis: There is a significant differrence between the mean FIDE rating and the mean USCF rating. 
+
+Test Statistic: 
+% fix t-test equation
+\begin{equation}
+    t_{(n-1)} \; \textrm{d}f = \dfrac{x}{\dfrac{y}{z}} = -3.16
+\end{equation}
+
+p-value: P(t \(\leq\) 0.005)
 \subsubsection{ANOVA Test}
+
+Because the p-value is less than 0.05, the null hypothesis cannot be accepted. Therefore, we provisionally accept the alternate hypothsis that there is a significant difference between USCF and FIDE ratings.
 
 \section{Evaluation}
 \subsection{Data based answer to the research question}
