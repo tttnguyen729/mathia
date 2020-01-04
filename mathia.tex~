@@ -2,6 +2,8 @@
 \usepackage{indentfirst}
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{float}
 
 \title{Math IA Rough Draft}
 \author{hyg172}
@@ -90,6 +92,52 @@ Russia & USA & China & India & Ukraine & Armenia & Azerbaijan & Hungary & France
 
 \subsection{Data Processing}
 \subsubsection{T-Test}
+
+\begin{center}
+\begin{tabular}{rr}
+Standard Deviation & Mean\\
+\hline
+54 & 2715\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{rr}
+Standard Deviation & Mean\\
+\hline
+54 & 2791\\
+\end{tabular}
+\end{center}
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+symbolic x coords={FIDE, USCF},
+xtick=data,
+enlarge x limits = 1,
+xlabel = {\(\pm \) 2 SD},
+ylabel = {Rating}
+]
+\addplot+[ybar,fill=blue] coordinates {
+(FIDE, 2715)
+(USCF, 2791)
+};
+\addplot+[only marks, error bars/.cd,
+y dir=both, y explicit, error bar style={line width=2pt}, error mark options={
+rotate=90,
+red,
+mark size=8pt,
+line width=2pt}] 
+coordinates {(FIDE, 2715) +-(0,108) (USCF, 2791) +-(0,108)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{FIDE and USCF Ratings}
+\end{figure}
+
+
 \subsubsection{ANOVA Test}
 
 \section{Evaluation}

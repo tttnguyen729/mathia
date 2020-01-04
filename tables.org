@@ -13,6 +13,16 @@
 | 2660 | 2733 |
 | 2659 | 2748 |
 
+** FIDE
+| Standard Deviation | Mean |
+|--------------------+------|
+|                 54 | 2715 |
+
+** USCF
+| Standard Deviation | Mean |
+|--------------------+------|
+|                 54 | 2791 |
+
 * FIDE Top 10 Countries
 | Russia |  USA | China | India | Ukraine | Armenia | Azerbaijan | Hungary | France | Poland |
 |--------+------+-------+-------+---------+---------+------------+---------+--------+--------|
