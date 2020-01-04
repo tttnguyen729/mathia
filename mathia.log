@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.10.26)  4 JAN 2020 10:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.10.26)  4 JAN 2020 11:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -21,6 +21,9 @@ File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
@@ -201,21 +204,22 @@ Overfull \hbox (7.02785pt too wide) in paragraph at lines 28--30
 atings . fide . com / top _ lists . phtml$[] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
-[2] [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
+[2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
+ [3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
  (./mathia.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 79.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 79.
 Package rerunfilecheck Info: File `mathia.out' has not changed.
-(rerunfilecheck)             Checksum: B3D6354099E8DF1B33516D13800705B0;725.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
+(rerunfilecheck)             Checksum: 8A5D22A45F54F1C8F28C9675323B9D5F;725.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 4252 strings out of 492615
- 63763 string characters out of 6131389
- 154069 words of memory out of 5000000
- 8168 multiletter control sequences out of 15000+600000
+ 4259 strings out of 492615
+ 64000 string characters out of 6131389
+ 153129 words of memory out of 5000000
+ 8171 multiletter control sequences out of 15000+600000
  8977 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,6n,28p,922b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -223,7 +227,7 @@ Here is how much of TeX's memory you used:
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on mathia.pdf (3 pages, 55669 bytes).
+Output written on mathia.pdf (3 pages, 56199 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  98 compressed objects within 1 object stream
