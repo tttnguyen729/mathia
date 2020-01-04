@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.10.26)  4 JAN 2020 14:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.10.26)  4 JAN 2020 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -772,35 +772,61 @@ month = 1910 & f = usa & l = R : Top % 20Overall .
  []
 
 [2]
-Overfull \hbox (19.3191pt too wide) in paragraph at lines 78--92
+Overfull \hbox (19.3191pt too wide) in paragraph at lines 82--96
  [] 
  []
 
-[3] [4pdfTeX warning (ext4): destination with the same identifier (name{figure.
-1}) has been already used, duplicate ignored
+[3pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
+as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.170 I
-       t would also be interesting to see which country's rating system is m...
+l.112 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.112 \end{table}
+                 ] [4pdfTeX warning (ext4): destination with the same identifie
+r (name{table.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.171 A
+       lternate Hypothesis: There is a significant difference in mean rating...
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
+ been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.171 A
+       lternate Hypothesis: There is a significant difference in mean rating...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.171 A
+       lternate Hypothesis: There is a significant difference in mean rating...
 ] [5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
  (./mathia.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
 Package rerunfilecheck Info: File `mathia.out' has not changed.
 (rerunfilecheck)             Checksum: A0E2AFA981215C56E601112C5BA18886;797.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
  ) 
 Here is how much of TeX's memory you used:
- 26411 strings out of 492615
- 648534 string characters out of 6131389
- 870285 words of memory out of 5000000
- 29902 multiletter control sequences out of 15000+600000
+ 26416 strings out of 492615
+ 648576 string characters out of 6131389
+ 866285 words of memory out of 5000000
+ 29903 multiletter control sequences out of 15000+600000
  10102 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,103p,922b,2634s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,103p,922b,2636s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
@@ -810,10 +836,10 @@ fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmtt12.pfb>
-Output written on mathia.pdf (6 pages, 102164 bytes).
+Output written on mathia.pdf (6 pages, 102384 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
+ 156 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
