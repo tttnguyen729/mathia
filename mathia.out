@@ -6,7 +6,7 @@
 \BOOKMARK [2][-]{subsection.2.1}{Data}{section.2}% 6
 \BOOKMARK [3][-]{subsubsection.2.1.1}{USCF vs FIDE}{subsection.2.1}% 7
 \BOOKMARK [2][-]{subsection.2.2}{Data Processing}{section.2}% 8
-\BOOKMARK [3][-]{subsubsection.2.2.1}{T-Test}{subsection.2.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.2.1}{2 Sample T-Test}{subsection.2.2}% 9
 \BOOKMARK [3][-]{subsubsection.2.2.2}{ANOVA Test}{subsection.2.2}% 10
 \BOOKMARK [1][-]{section.3}{Evaluation}{}% 11
 \BOOKMARK [2][-]{subsection.3.1}{Data based answer to the research question}{section.3}% 12

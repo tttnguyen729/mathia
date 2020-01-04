@@ -6,8 +6,8 @@
 \contentsline {subsection}{\numberline {2.1}Data}{2}{subsection.2.1}% 
 \contentsline {subsubsection}{\numberline {2.1.1}USCF vs FIDE}{2}{subsubsection.2.1.1}% 
 \contentsline {subsection}{\numberline {2.2}Data Processing}{4}{subsection.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.1}T-Test}{4}{subsubsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.2}ANOVA Test}{4}{subsubsection.2.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}2 Sample T-Test}{4}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}ANOVA Test}{5}{subsubsection.2.2.2}% 
 \contentsline {section}{\numberline {3}Evaluation}{5}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Data based answer to the research question}{5}{subsection.3.1}% 
 \contentsline {subsection}{\numberline {3.2}Extensions}{5}{subsection.3.2}% 

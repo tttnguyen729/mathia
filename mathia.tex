@@ -33,7 +33,7 @@ I predict that there will be a statistically significant difference between the 
 \subsubsection{USCF vs FIDE}
 Suprisingly, the top 10 players by USCF rating differ from FIDE's list of the top 10 US players by FIDE rating. This difference is due to the fact that FIDE and USCF tournaments have different criteria for a tournament to be valid. Due to this, we will find the respective USCF ratings of the top 10 US players by FIDE rating. Nevertheless, the top players American players by FIDE and USCF rating are the same, just in different order.
 
-\begin{table}
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{rr}
 FIDE & USCF\\
@@ -55,7 +55,7 @@ FIDE & USCF\\
 Additionally, it is important to note that the USCF top player list was accurate as of December 2019 and the FIDE list was accurate as of January 2020. 
 
 
-\begin{table}
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{rr}
 Standard Deviation & Mean\\
@@ -67,7 +67,7 @@ Standard Deviation & Mean\\
 \end{table}
 
 
-\begin{table}
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{rr}
 Standard Deviation & Mean\\
@@ -80,7 +80,7 @@ Standard Deviation & Mean\\
 
 
 \subsection{Data Processing}
-\subsubsection{T-Test}
+\subsubsection{2 Sample T-Test}
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
@@ -124,27 +124,7 @@ Because the p-value is less than 0.05, the null hypothesis cannot be accepted. T
 
 \subsubsection{ANOVA Test}
 
-% \begin{table}
-% \begin{center}
-% \begin{tabular}{rrrrrrrrrr}
-% Russia & USA & China & India & Ukraine & Armenia & Azerbaijan & Hungary & France & Poland\\
-% \hline
-% 2777 & 2822 & 2805 & 2758 & 2698 & 2773 & 2770 & 2758 & 2770 & 2758\\
-% 2774 & 2765 & 2758 & 2721 & 2685 & 2689 & 2765 & 2696 & 2679 & 2725\\
-% 2753 & 2758 & 2732 & 2716 & 2685 & 2663 & 2668 & 2663 & 2651 & 2639\\
-% 2752 & 2736 & 2726 & 2654 & 2678 & 2642 & 2666 & 2649 & 2640 & 2619\\
-% 2747 & 2712 & 2705 & 2648 & 2662 & 2641 & 2659 & 2626 & 2633 & 2614\\
-% 2731 & 2683 & 2683 & 2639 & 2660 & 2641 & 2625 & 2621 & 2625 & 2611\\
-% 2726 & 2677 & 2669 & 2638 & 2650 & 2632 & 2622 & 2620 & 2604 & 2609\\
-% 2723 & 2673 & 2667 & 2637 & 2644 & 2617 & 2609 & 2617 & 2603 & 2603\\
-% 2705 & 2660 & 2664 & 2636 & 2634 & 2613 & 2598 & 2595 & 2600 & 2601\\
-% 2704 & 2659 & 2640 & 2630 & 2631 & 2611 & 2538 & 2593 & 2572 & 2589\\
-% \end{tabular}
-    % \caption{Top 10 Countries and their top 10 players}
-% \end{center}
-% \end{table}
-
-\begin{table}
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{lrrrrrr}
  & Russia & USA & China & India & Ukraine & Armenia\\
@@ -186,6 +166,28 @@ It would also be interesting to see which country's rating system is most simila
 Additionally, it would be interesting to see how online ratings compared to FIDE ratings.
 
 \newpage
+\begin{verbatim}
+import statistics
+
+# Russia
+print(statistics.stdev([2777, 2774, 2753, 2752, 2747, 2731, 2726, 2723, 2705, 2704]))
+
+# USA
+print(statistics.stdev([2822, 2765, 2758, 2736, 2712, 2683, 2677, 2673, 2660, 2659]))
+
+# China
+print(statistics.stdev([2805, 2758, 2732, 2726, 2705, 2683, 2669, 2667, 2664, 2640]))
+
+# India 
+print(statistics.stdev([2758, 2721, 2716, 2654, 2648, 2639, 2638, 2637, 2636, 2630])) 
+
+# Ukraine
+print(statistics.stdev([2698, 2685, 2685, 2678, 2662, 2660,2650, 2644, 2634, 2631]))
+
+# Armenia
+print(statistics.stdev([2773, 2689, 2663, 2642, 2641, 2641,2632, 2617, 2613, 2611]))
+\end{verbatim}
+\newpage
 \begin{center}
 Works Cited
 \end{center}
@@ -197,27 +199,6 @@ Works Cited
 Top 100 US Chess players as of October: (USCF)
 \url{http://www.uschess.org/component/option,com_top_players/Itemid,371?op=list&month=1910&f=usa&l=R:Top%20Overall.&h=Overall}
 
-
-
-\begin{center}
-\begin{tabular}{lrrrrrrrrrr}
- & Russia & USA & China & India & Ukraine & Armenia & Azerbaijan & Hungary & France & Poland\\
-\hline
- & 2777 & 2822 & 2805 & 2758 & 2698 & 2773 & 2770 & 2758 & 2770 & 2758\\
- & 2774 & 2765 & 2758 & 2721 & 2685 & 2689 & 2765 & 2696 & 2679 & 2725\\
- & 2753 & 2758 & 2732 & 2716 & 2685 & 2663 & 2668 & 2663 & 2651 & 2639\\
- & 2752 & 2736 & 2726 & 2654 & 2678 & 2642 & 2666 & 2649 & 2640 & 2619\\
- & 2747 & 2712 & 2705 & 2648 & 2662 & 2641 & 2659 & 2626 & 2633 & 2614\\
- & 2731 & 2683 & 2683 & 2639 & 2660 & 2641 & 2625 & 2621 & 2625 & 2611\\
- & 2726 & 2677 & 2669 & 2638 & 2650 & 2632 & 2622 & 2620 & 2604 & 2609\\
- & 2723 & 2673 & 2667 & 2637 & 2644 & 2617 & 2609 & 2617 & 2603 & 2603\\
- & 2705 & 2660 & 2664 & 2636 & 2634 & 2613 & 2598 & 2595 & 2600 & 2601\\
- & 2704 & 2659 & 2640 & 2630 & 2631 & 2611 & 2538 & 2593 & 2572 & 2589\\
-\(\sum\) & 28392 &  &  &  &  &  &  &  &  & \\
-    \(\overline{x}\) & 2739.2 &  &  &  &  &  &  &  &  & \\
-SD & 25.75 &  &  &  &  &  &  &  &  & \\
-\end{tabular}
-\end{center}
 
 \end{document}
 
