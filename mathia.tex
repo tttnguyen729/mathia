@@ -18,15 +18,15 @@
 
 \section{Exploration}
 \subsection{Introduction}
-As a young child, I've always been interested in the idea of quantifying and relating objects using numbers. This was initially a usefool tool in visualizing basic arithmetic. When I started playing tournament chess, I recieved a chess rating, or a number used to quantify one's chess strength relative to others. There are multiple such systems that give chess player ratings, for example online chess websites such as Lichess and Chess.com have their own rating systems, and even countries have their own rating systems. However, the governing body of chess, FIDE, has their own rating system that allows a standard rating for comparison between countries with otherwise different rating systems. This led to the foci of the investigation on how FIDE ratings compare to USCF ratings with respect to the top 10 players in the US and also comparing the strengths of the top 10 players of the top 10 countries.
+As a young child, I've always been interested in the idea of quantifying and relating objects using numbers. This was initially a usefool tool in visualizing basic arithmetic. When I started playing tournament chess, I recieved a chess rating, or a number used to quantify one's chess strength relative to others. There are multiple such systems that give chess player ratings, for example online chess websites such as Lichess and Chess.com have their own rating systems, and even countries have their own rating systems. However, the governing body of chess, FIDE, has their own rating system that allows a standard rating for comparison between countries with otherwise different rating systems. This led to the foci of the investigation on how FIDE ratings compare to USCF ratings with respect to the top 10 players in the US and also comparing the strengths of the top 10 players of the top 6 countries.
 \subsection{Research Questions}
 How do the FIDE ratings compare to USCF ratings of the top 10 chess players in the US?
 
-How different are the ratings between the top 10 players of the top 10 chess country federations?
+How different are the ratings between the top 10 players of the top 6 chess country federations?
 \subsection{Hypothesis}
 I predict that USCF ratings will be not much different from FIDE ratings. However, USCF ratings may be slightly higher as the overall pool of players with FIDE ratings has stronger players.
 
-I predict that there will be a statistically significant difference between the FIDE ratings of the top 10 players of the top 10 countries as they have different concentrations of strong players. 
+I predict that there will be a statistically significant difference between the FIDE ratings of the top 10 players of the top 6 countries as they have different concentrations of strong players. 
 
 \section{Analysis}
 \subsection{Data}
@@ -147,14 +147,43 @@ SD & 25.75 & 54.40 & 50.67 & 45.92 & 23.15 & 48.65\\
 \end{center}
 \end{table}
 
-Null Hypothesis: There is not a significant difference in mean ratings among the ten countries. 
+Null Hypothesis: There is not a significant difference in mean ratings among the six countries. 
 
-Alternate Hypothesis: There is a significant difference in mean ratings among the ten countries. 
+Alternate Hypothesis: There is a significant difference in mean ratings among the six countries. 
 
 Variation between groups:
+\begin{equation}
+\begin{split}
+    SST & = [\frac{27392^{2}}{10} + \frac{27145^{2}}{10} + \frac{27049^{2}}{10} + \frac{26677^{2}}{10} + \frac{26627^{2}}{10} + \frac{26522^{2}}{10}] \\ 
+    & - [\frac{(27392+27145+27049+26677+26627+26522)^{2}}{60}] \\
+    & = 59140.8 
+\end{split}
+\end{equation}
 
 Variation within groups:
+\begin{equation}
+\begin{split}
+    SSE & = [2777^{2} + .. + 2611^{2}] - [\frac{27392^{2}}{10} + \frac{27145^{2}}{10} + \frac{27049^{2}}{10} + \frac{26677^{2}}{10} + \frac{26627^{2}}{10} + \frac{26522^{2}}{10}] \\
+    & = 100814.8 
+\end{split}
+\end{equation}
 
+Finding the squared standard error would require squaring each of the 60 data points. As the standard square error is easily calculated using a calculator, only first and last terms are shown.
+
+\begin{center}
+\begin{tabular}{lrlrr}
+ & SS & DF & MS & F\\
+Treatments & 59140.8 & k-1=6-1=5 & 11828.16 & 6.336\\
+Errors & 100814.8 & N-k = 60-6=54 & 1866.94074 & \\
+\end{tabular}
+\end{center}
+Dividing the sum of the squares by the degress of freedom for both the treatments and the errors results in the mean of the squares. Dividing the mean of the squares of treatments by the mean of the squares of errors results in a Fischer value of approximately 6.336.
+
+Test Statistic: F(5,54) = 6.336
+
+p-value: P(F\(>\)6.336) = 1.0736 x \(10^{-4}\)
+
+The probabilty of the null hypothesis is 1.0736 x \(10^{-4}\). Therefore the data does not support the null hypothesis and we can provisionally accept the alternate hypothesis that there is a significant difference in mean chess ratings among the top six countries.
 
 \section{Evaluation}
 \subsection{Data based answer to the research question}

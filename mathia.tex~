@@ -18,15 +18,15 @@
 
 \section{Exploration}
 \subsection{Introduction}
-As a young child, I've always been interested in the idea of quantifying and relating objects using numbers. This was initially a usefool tool in visualizing basic arithmetic. When I started playing tournament chess, I recieved a chess rating, or a number used to quantify one's chess strength relative to others. There are multiple such systems that give chess player ratings, for example online chess websites such as Lichess and Chess.com have their own rating systems, and even countries have their own rating systems. However, the governing body of chess, FIDE, has their own rating system that allows a standard rating for comparison between countries with otherwise different rating systems. This led to the foci of the investigation on how FIDE ratings compare to USCF ratings with respect to the top 10 players in the US and also comparing the strengths of the top 10 players of the top 10 countries.
+As a young child, I've always been interested in the idea of quantifying and relating objects using numbers. This was initially a usefool tool in visualizing basic arithmetic. When I started playing tournament chess, I recieved a chess rating, or a number used to quantify one's chess strength relative to others. There are multiple such systems that give chess player ratings, for example online chess websites such as Lichess and Chess.com have their own rating systems, and even countries have their own rating systems. However, the governing body of chess, FIDE, has their own rating system that allows a standard rating for comparison between countries with otherwise different rating systems. This led to the foci of the investigation on how FIDE ratings compare to USCF ratings with respect to the top 10 players in the US and also comparing the strengths of the top 10 players of the top 6 countries.
 \subsection{Research Questions}
 How do the FIDE ratings compare to USCF ratings of the top 10 chess players in the US?
 
-How different are the ratings between the top 10 players of the top 10 chess country federations?
+How different are the ratings between the top 10 players of the top 6 chess country federations?
 \subsection{Hypothesis}
 I predict that USCF ratings will be not much different from FIDE ratings. However, USCF ratings may be slightly higher as the overall pool of players with FIDE ratings has stronger players.
 
-I predict that there will be a statistically significant difference between the FIDE ratings of the top 10 players of the top 10 countries as they have different concentrations of strong players. 
+I predict that there will be a statistically significant difference between the FIDE ratings of the top 10 players of the top 6 countries as they have different concentrations of strong players. 
 
 \section{Analysis}
 \subsection{Data}
@@ -124,27 +124,7 @@ Because the p-value is less than 0.05, the null hypothesis cannot be accepted. T
 
 \subsubsection{ANOVA Test}
 
-% \begin{table}
-% \begin{center}
-% \begin{tabular}{rrrrrrrrrr}
-% Russia & USA & China & India & Ukraine & Armenia & Azerbaijan & Hungary & France & Poland\\
-% \hline
-% 2777 & 2822 & 2805 & 2758 & 2698 & 2773 & 2770 & 2758 & 2770 & 2758\\
-% 2774 & 2765 & 2758 & 2721 & 2685 & 2689 & 2765 & 2696 & 2679 & 2725\\
-% 2753 & 2758 & 2732 & 2716 & 2685 & 2663 & 2668 & 2663 & 2651 & 2639\\
-% 2752 & 2736 & 2726 & 2654 & 2678 & 2642 & 2666 & 2649 & 2640 & 2619\\
-% 2747 & 2712 & 2705 & 2648 & 2662 & 2641 & 2659 & 2626 & 2633 & 2614\\
-% 2731 & 2683 & 2683 & 2639 & 2660 & 2641 & 2625 & 2621 & 2625 & 2611\\
-% 2726 & 2677 & 2669 & 2638 & 2650 & 2632 & 2622 & 2620 & 2604 & 2609\\
-% 2723 & 2673 & 2667 & 2637 & 2644 & 2617 & 2609 & 2617 & 2603 & 2603\\
-% 2705 & 2660 & 2664 & 2636 & 2634 & 2613 & 2598 & 2595 & 2600 & 2601\\
-% 2704 & 2659 & 2640 & 2630 & 2631 & 2611 & 2538 & 2593 & 2572 & 2589\\
-% \end{tabular}
-    % \caption{Top 10 Countries and their top 10 players}
-% \end{center}
-% \end{table}
-
-\begin{table}
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{lrrrrrr}
  & Russia & USA & China & India & Ukraine & Armenia\\
@@ -167,14 +147,43 @@ SD & 25.75 & 54.40 & 50.67 & 45.92 & 23.15 & 48.65\\
 \end{center}
 \end{table}
 
-Null Hypothesis: There is not a significant difference in mean ratings among the ten countries. 
+Null Hypothesis: There is not a significant difference in mean ratings among the six countries. 
 
-Alternate Hypothesis: There is a significant difference in mean ratings among the ten countries. 
+Alternate Hypothesis: There is a significant difference in mean ratings among the six countries. 
 
 Variation between groups:
+\begin{equation}
+\begin{split}
+    SST & = [\frac{27392^{2}}{10} + \frac{27145^{2}}{10} + \frac{27049^{2}}{10} + \frac{26677^{2}}{10} + \frac{26627^{2}}{10} + \frac{26522^{2}}{10}] \\ 
+    & - [\frac{(27392+27145+27049+26677+26627+26522)^{2}}{60}] \\
+    & = 59140.8 
+\end{split}
+\end{equation}
 
 Variation within groups:
+\begin{equation}
+\begin{split}
+    SSE & = [2777^{2} + .. + 2611^{2}] - [\frac{27392^{2}}{10} + \frac{27145^{2}}{10} + \frac{27049^{2}}{10} + \frac{26677^{2}}{10} + \frac{26627^{2}}{10} + \frac{26522^{2}}{10}] \\
+    & = 100814.8 
+\end{split}
+\end{equation}
 
+Finding the squared standard error would require squaring each of the 60 data points. As the standard square error is easily calculated using a calculator, only first and last terms are shown.
+
+\begin{center}
+\begin{tabular}{lrlrr}
+ & SS & DF & MS & F\\
+Treatments & 59140.8 & k-1=6-1=5 & 11828.16 & 6.336\\
+Errors & 100814.8 & N-k = 60-6=54 & 1866.94074 & \\
+\end{tabular}
+\end{center}
+Dividing the sum of the squares by the degress of freedom for both the treatments and the errors results in the mean of the squares. Dividing the mean of the squares of treatments by the mean of the squares of errors results in a Fischer value of approximately 6.336.
+
+Test Statistic: F(5,54) = 6.336
+
+p-value: P(F\(>\)6.336) = 1.0736 x \(10^{-4}\)
+
+The probabilty of the null hypothesis is 1.0736 x \(10^{-4}\). Therefore the data does not support the null hypothesis and we can provisionally accept the alternate hypothesis thatthere is a significant difference in mean chess ratings among the top six countries.
 
 \section{Evaluation}
 \subsection{Data based answer to the research question}
