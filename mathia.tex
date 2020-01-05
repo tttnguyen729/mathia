@@ -29,8 +29,8 @@ I predict that USCF ratings will be not much different from FIDE ratings. Howeve
 I predict that there will be a statistically significant difference between the FIDE ratings of the top 10 players of the top 6 countries as they have different concentrations of strong players. 
 
 \section{Analysis}
-\subsection{Data}
-\subsubsection{USCF vs FIDE}
+\subsection{USCF vs FIDE}
+\subsubsection{Data}
 Suprisingly, the top 10 players by USCF rating differ from FIDE's list of the top 10 US players by FIDE rating. This difference is due to the fact that FIDE and USCF tournaments have different criteria for a tournament to be valid. Due to this, we will find the respective USCF ratings of the top 10 US players by FIDE rating. Nevertheless, the top players American players by FIDE and USCF rating are the same, just in different order.
 
 \begin{table}[H]
@@ -52,35 +52,8 @@ FIDE & USCF\\
     \caption{FIDE vs USCF ratings}
 \end{center}
 \end{table}
-Additionally, it is important to note that the USCF top player list was accurate as of December 2019 and the FIDE list was accurate as of January 2020. 
+The USCF top player list and the FIDE list was accurate as of December 2019.
 
-
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{rr}
-Standard Deviation & Mean\\
-\hline
-54 & 2715\\
-\end{tabular}
-    \caption{FIDE rating}
-\end{center}
-\end{table}
-
-
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{rr}
-Standard Deviation & Mean\\
-\hline
-54 & 2791\\
-\end{tabular}
-    \caption{USCF rating}
-\end{center}
-\end{table}
-
-
-\subsection{Data Processing}
-\subsubsection{2 Sample T-Test}
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
@@ -108,22 +81,87 @@ coordinates {(FIDE, 2715) +-(0,108) (USCF, 2791) +-(0,108)
 \caption{FIDE and USCF Ratings}
 \end{figure}
 
-Null Hypothesis: There is not a significant differece (no correlation?) between the mean FIDE rating and the mean USCF rating.
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{rr}
+Standard Deviation & Mean\\
+\hline
+54 & 2715\\
+\end{tabular}
+    \caption{FIDE rating}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{rr}
+Standard Deviation & Mean\\
+\hline
+54 & 2791\\
+\end{tabular}
+    \caption{USCF rating}
+\end{center}
+\end{table}
+
+\subsubsection{2 Sample T-Test}
+
+Null Hypothesis: There is not a significant difference (no correlation?) between the mean FIDE rating and the mean USCF rating.
 
 Alternate Hypothesis: There is a significant differrence between the mean FIDE rating and the mean USCF rating. 
 
 Test Statistic: 
-% fix t-test equation
 \begin{equation}
-    t_{(n-1)} \; \textrm{d}f = \dfrac{x}{\dfrac{y}{z}} = -3.16
+\begin{split}
+    t_{(n-1)} \; \textrm{d}f & = \dfrac{(\overline{x_{1}} - \overline{x_{2}}) - (\mu_{1} - \mu_{2})}{\sqrt{\dfrac{(s_{1})^{2}}{n_{1}}} + \dfrac{(s_{2})^{2}}{n_{2}}} \\
+    & = \dfrac{(2715-2791) - (0)}{\sqrt{\dfrac{(54)^{2}}{10} + \dfrac{(54)^{2}}{10}}} = -3.16
+\end{split}
 \end{equation}
 
 p-value: P(t \(\leq\) -3.16) = 0.005
 
+\subsubsection{Data based answer to the research question}
 Because the p-value is less than 0.05, the null hypothesis cannot be accepted. Therefore, we provisionally accept the alternate hypothsis that there is a significant difference between USCF and FIDE ratings.
 
-\subsubsection{ANOVA Test}
+\subsubsection{Linear Regression}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+        xmin = 2600,
+        domain = 2600:3000,
+        ymin = 2600,
+        ymax = 3000,
+        xmax = 3000,
+        xlabel = FIDE,
+        ylabel = USCF
+        ]
+    \addplot[only marks] coordinates {
+    (2822,2894)
+    (2765,2826)
+    (2758,2834)
+    (2736,2836)
+    (2712,2787)
+    (2683,2744)
+    (2677,2758)
+    (2673,2749)
+    (2660,2733)
+    (2659,2748)   
+    };
+    \addplot+[no marks, color=red]{0.964 * x + 172.391};
+    \end{axis}
+\end{tikzpicture}
+    \caption{USCF vs FIDE rating}
+\end{figure}
 
+We will use a linear regression to test how well FIDE and USCF ratings relate to each other among the top 10 US players.
+
+USCF = 0.964 FIDE + 172
+The linear regression results in an r value of 0.976 and an \(r^{2}\) value of 0.953. This shows that there is a very strong correlation between USCF and FIDE ratings. This is true despite the fact that the average USCF and FIDE ratings have a statistically significant difference.
+
+
+\subsection{Comparing Chess Ratings of the Top 6 Countries}
+\subsubsection{Data}
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{lrrrrrr}
@@ -146,7 +184,43 @@ SD & 25.75 & 54.40 & 50.67 & 45.92 & 23.15 & 48.65\\
 \caption{Top 6 Countries and their top 10 players}
 \end{center}
 \end{table}
+This data was retreived from FIDE's Top Chess Federations. 
 
+It is interesting to see that Russia is the only country with its top 10 players having a rating higher than 2700.
+
+Standard Deviation (SD) was calculated by plugging in the 10 data points for each country into a python program (see Appendix A).
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+symbolic x coords={Russia, USA, China, India, Ukraine, Armenia},
+xtick=data,
+xlabel = {Country (Error Bars = \(\pm \) 2 SD)},
+ylabel = {Mean Chess Rating}
+]
+\addplot+[ybar,fill=blue] coordinates {
+(Russia, 2739.2)
+(USA, 2714.5)
+(China, 2704.9)
+(India, 2667.7)
+(Ukraine, 2662.7)
+(Armenia, 2652.2)
+};
+\addplot+[only marks, error bars/.cd,
+y dir=both, y explicit, error bar style={line width=2pt}, error mark options={
+rotate=90,
+red,
+mark size=8pt,
+line width=2pt}] 
+coordinates {(Russia, 2739.2) +-(0,51.5) (USA, 2714.5) +-(0,108.8)(China, 2704.9) +-(0,101.34) (India, 2667.7) +-(0,91.84) (Ukraine, 2666.7) +-(0,46.3) (Armenia, 2652.2) +-(0,97.3) 
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Mean Chess Rating by Country}
+\end{figure}
+
+\subsubsection{ANOVA Test}
 Null Hypothesis: There is not a significant difference in mean ratings among the six countries. 
 
 Alternate Hypothesis: There is a significant difference in mean ratings among the six countries. 
@@ -183,11 +257,15 @@ Test Statistic: F(5,54) = 6.336
 
 p-value: P(F\(>\)6.336) = 1.0736 x \(10^{-4}\)
 
+\subsubsection{Data based answer to the research question}
 The probabilty of the null hypothesis is 1.0736 x \(10^{-4}\). Therefore the data does not support the null hypothesis and we can provisionally accept the alternate hypothesis that there is a significant difference in mean chess ratings among the top six countries.
 
-\section{Evaluation}
-\subsection{Data based answer to the research question}
+\section{Conclusion}
+As we can see, there is a significant difference in the strength of the top 6 chess countries as shown by the ANOVA test. We also found out that a chess federation's rating system can differ from FIDE's ranking system, as shown by the 2 sample test between FIDE and USCF ratings. 
+
 \subsection{Extensions}
+It would be interesting to see whether there is still a significant difference between the top 3 chess country federations.
+
 It would also be interesting to look at countries concentration of grandmasters, international masters, as well as titled players as a measure of strength. 
 
 It would also be interesting to see which country's rating system is most similar to FIDE ratings.
@@ -195,6 +273,8 @@ It would also be interesting to see which country's rating system is most simila
 Additionally, it would be interesting to see how online ratings compared to FIDE ratings.
 
 \newpage
+\begin{appendix}
+\section{Calculating standard deviation using Python}
 \begin{verbatim}
 import statistics
 
@@ -216,19 +296,13 @@ print(statistics.stdev([2698, 2685, 2685, 2678, 2662, 2660,2650, 2644, 2634, 263
 # Armenia
 print(statistics.stdev([2773, 2689, 2663, 2642, 2641, 2641,2632, 2617, 2613, 2611]))
 \end{verbatim}
+\end{appendix}
+
 \newpage
-\begin{center}
-Works Cited
-\end{center}
-
-
+\section{Works Cited}
 \url{https://ratings.fide.com/top_lists.phtml}
 
-
-Top 100 US Chess players as of October: (USCF)
-\url{http://www.uschess.org/component/option,com_top_players/Itemid,371?op=list&month=1910&f=usa&l=R:Top%20Overall.&h=Overall}
-
-
+\url{http://www.uschess.org/component/option,com_top_players/Itemid,371?op=list&month=1912&f=usa&l=R:Top%20Overall.&h=Overall}
 \end{document}
 
 
