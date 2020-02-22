@@ -1,18 +1,18 @@
-\documentclass[12pt]{article}
+\documentclass[12pt, titlepage]{article}
 \usepackage{indentfirst}
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \usepackage{pgfplots}
 \usepackage{float}
 \usepackage{amsmath}
+\usepackage{etex}
+\renewcommand\refname{Works Cited}
 
-\title{Math IA Rough Draft}
-\author{hyg172}
-\date{May 2020}
+\title{\normalsize How do FIDE chess ratings compare to USCF chess ratings of the top 10 chess players in the US?}
+\date{\normalsize May 2020}
 
 \begin{document}
 \maketitle
-
 \tableofcontents
 \newpage
 
@@ -33,8 +33,8 @@ I predict that there will be a statistically significant difference between the 
 \subsubsection{Data}
 Suprisingly, the top 10 players by USCF rating differ from FIDE's list of the top 10 US players by FIDE rating. This difference is due to the fact that FIDE and USCF tournaments have different criteria for a tournament to be valid. Due to this, we will find the respective USCF ratings of the top 10 US players by FIDE rating. Nevertheless, the top players American players by FIDE and USCF rating are the same, just in different order.
 
-\begin{table}[H]
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tabular}{rr}
 FIDE & USCF\\
 \hline
@@ -50,9 +50,10 @@ FIDE & USCF\\
 2659 & 2748\\
 \end{tabular}
     \caption{FIDE vs USCF ratings}
-\end{center}
-\end{table}
-The USCF top player list and the FIDE list was accurate as of December 2019.
+  \end{figure}
+  
+The USCF top player list and the FIDE list accurate as of December 2019.
+
 
 \begin{figure}[H]
 \centering
@@ -81,42 +82,41 @@ coordinates {(FIDE, 2715) +-(0,108) (USCF, 2791) +-(0,108)
 \caption{FIDE and USCF Ratings}
 \end{figure}
 
-\begin{table}[H]
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tabular}{rr}
 Standard Deviation & Mean\\
 \hline
 54 & 2715\\
 \end{tabular}
     \caption{FIDE rating}
-\end{center}
-\end{table}
+\end{figure}
 
-
-\begin{table}[H]
-\begin{center}
+\begin{figure}[H]
+  \centering
 \begin{tabular}{rr}
 Standard Deviation & Mean\\
 \hline
 54 & 2791\\
 \end{tabular}
     \caption{USCF rating}
-\end{center}
-\end{table}
+\end{figure}
+
+
+
 
 \subsubsection{2 Sample T-Test}
+Null Hypothesis: There is no significant difference between the mean FIDE rating and the mean USCF rating. FIDE and USCF ratings are indeendent.
 
-Null Hypothesis: There is not a significant difference (no correlation?) between the mean FIDE rating and the mean USCF rating.
-
-Alternate Hypothesis: There is a significant differrence between the mean FIDE rating and the mean USCF rating. 
+Alternate Hypothesis: There is a significant differrence between the mean FIDE rating and the mean USCF rating. FIDE and USCF ratings are indeendent.
 
 Test Statistic: 
-\begin{equation}
+\begin{equation*}
 \begin{split}
     t_{(n-1)} \; \textrm{d}f & = \dfrac{(\overline{x_{1}} - \overline{x_{2}}) - (\mu_{1} - \mu_{2})}{\sqrt{\dfrac{(s_{1})^{2}}{n_{1}}} + \dfrac{(s_{2})^{2}}{n_{2}}} \\
     & = \dfrac{(2715-2791) - (0)}{\sqrt{\dfrac{(54)^{2}}{10} + \dfrac{(54)^{2}}{10}}} = -3.16
 \end{split}
-\end{equation}
+\end{equation*}
 
 p-value: P(t \(\leq\) -3.16) = 0.005
 
@@ -162,8 +162,8 @@ The linear regression results in an r value of 0.976 and an \(r^{2}\) value of 0
 
 \subsection{Comparing Chess Ratings of the Top 6 Countries}
 \subsubsection{Data}
-\begin{table}[H]
-\begin{center}
+\begin{figure}[H]
+  \centering
 \begin{tabular}{lrrrrrr}
  & Russia & USA & China & India & Ukraine & Armenia\\
 \hline
@@ -182,13 +182,12 @@ The linear regression results in an r value of 0.976 and an \(r^{2}\) value of 0
 SD & 25.75 & 54.40 & 50.67 & 45.92 & 23.15 & 48.65\\
 \end{tabular}
 \caption{Top 6 Countries and their top 10 players}
-\end{center}
-\end{table}
+\end{figure}
 This data was retreived from FIDE's Top Chess Federations. 
 
 It is interesting to see that Russia is the only country with its top 10 players having a rating higher than 2700.
 
-Standard Deviation (SD) was calculated by plugging in the 10 data points for each country into a python program (see Appendix A).
+Standard Deviation (SD) was calculated using a Ti-84 calculator.
 
 \begin{figure}[H]
 \centering
@@ -223,34 +222,34 @@ coordinates {(Russia, 2739.2) +-(0,51.5) (USA, 2714.5) +-(0,108.8)(China, 2704.9
 \subsubsection{ANOVA Test}
 Null Hypothesis: There is not a significant difference in mean ratings among the six countries. 
 
-Alternate Hypothesis: There is a significant difference in mean ratings among the six countries. 
+Alternate Hypothesis: There is a significant difference in mean ratings among the six countries. The observed differences are not due to random sampling variation.
 
 Variation between groups:
-\begin{equation}
+\begin{equation*}
 \begin{split}
     SST & = [\frac{27392^{2}}{10} + \frac{27145^{2}}{10} + \frac{27049^{2}}{10} + \frac{26677^{2}}{10} + \frac{26627^{2}}{10} + \frac{26522^{2}}{10}] \\ 
     & - [\frac{(27392+27145+27049+26677+26627+26522)^{2}}{60}] \\
     & = 59140.8 
 \end{split}
-\end{equation}
+\end{equation*}
 
 Variation within groups:
-\begin{equation}
+\begin{equation*}
 \begin{split}
     SSE & = [2777^{2} + .. + 2611^{2}] - [\frac{27392^{2}}{10} + \frac{27145^{2}}{10} + \frac{27049^{2}}{10} + \frac{26677^{2}}{10} + \frac{26627^{2}}{10} + \frac{26522^{2}}{10}] \\
     & = 100814.8 
 \end{split}
-\end{equation}
+\end{equation*}
 
 Finding the squared standard error would require squaring each of the 60 data points. As the standard square error is easily calculated using a calculator, only first and last terms are shown.
-
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tabular}{lrlrr}
  & SS & DF & MS & F\\
 Treatments & 59140.8 & k-1=6-1=5 & 11828.16 & 6.336\\
 Errors & 100814.8 & N-k = 60-6=54 & 1866.94074 & \\
 \end{tabular}
-\end{center}
+\end{figure}
 Dividing the sum of the squares by the degress of freedom for both the treatments and the errors results in the mean of the squares. Dividing the mean of the squares of treatments by the mean of the squares of errors results in a Fischer value of approximately 6.336.
 
 Test Statistic: F(5,54) = 6.336
@@ -272,38 +271,54 @@ It would also be interesting to see which country's rating system is most simila
 
 Additionally, it would be interesting to see how online ratings compared to FIDE ratings.
 
+% \newpage
+% \begin{appendix}
+% p\section{Calculating standard deviation using Python}
+% \begin{verbatim}
+% import statistics
+
+% # Russia
+% print(statistics.stdev([2777, 2774, 2753, 2752, 2747, 2731, 2726, 2723, 2705, 2704]))
+
+% # USA
+% print(statistics.stdev([2822, 2765, 2758, 2736, 2712, 2683, 2677, 2673, 2660, 2659]))
+
+% # China
+% print(statistics.stdev([2805, 2758, 2732, 2726, 2705, 2683, 2669, 2667, 2664, 2640]))
+
+% # India 
+% print(statistics.stdev([2758, 2721, 2716, 2654, 2648, 2639, 2638, 2637, 2636, 2630])) 
+
+% # Ukraine
+% print(statistics.stdev([2698, 2685, 2685, 2678, 2662, 2660,2650, 2644, 2634, 2631]))
+
+% # Armenia
+% print(statistics.stdev([2773, 2689, 2663, 2642, 2641, 2641,2632, 2617, 2613, 2611]))
+% \end{verbatim}
+% \end{appendix}
+
 \newpage
-\begin{appendix}
-\section{Calculating standard deviation using Python}
-\begin{verbatim}
-import statistics
-
-# Russia
-print(statistics.stdev([2777, 2774, 2753, 2752, 2747, 2731, 2726, 2723, 2705, 2704]))
-
-# USA
-print(statistics.stdev([2822, 2765, 2758, 2736, 2712, 2683, 2677, 2673, 2660, 2659]))
-
-# China
-print(statistics.stdev([2805, 2758, 2732, 2726, 2705, 2683, 2669, 2667, 2664, 2640]))
-
-# India 
-print(statistics.stdev([2758, 2721, 2716, 2654, 2648, 2639, 2638, 2637, 2636, 2630])) 
-
-# Ukraine
-print(statistics.stdev([2698, 2685, 2685, 2678, 2662, 2660,2650, 2644, 2634, 2631]))
-
-# Armenia
-print(statistics.stdev([2773, 2689, 2663, 2642, 2641, 2641,2632, 2617, 2613, 2611]))
-\end{verbatim}
-\end{appendix}
-
-\newpage
-\section{Works Cited}
+\begin{thebibliography}{thewidest}
+\bibitem{Unsort}
 \url{https://ratings.fide.com/top_lists.phtml}
 
-\url{http://www.uschess.org/component/option,com_top_players/Itemid,371?op=list&month=1912&f=usa&l=R:Top%20Overall.&h=Overall}
+\bibitem{Unsort}
+  \url{http://www.uschess.org/component/option,com_top_players/Itemid,371?op=list&month=1912&f=usa&l=R:Top%20Overall.&h=}
+
+\bibitem{Unsort}
+\url{Explorable.com (Jun 6, 2009). ANOVA. Retrieved Feb 19, 2020 from Explorable.com: https://explorable.com/anova}
+
+\bibitem{Unsort}
+\url{https://ocw.mit.edu/courses/aeronautics-and-astronautics/16-881-robust-system-design-summer-1998/lecture-notes/l7_anova4.pdf}
+
+\bibitem{Unsort}
+\url{https://www.itl.nist.gov/div898/handbook/prc/section4/prc433.htm}
+\end{thebibliography}
 \end{document}
+
+
+
+
 
 
 
