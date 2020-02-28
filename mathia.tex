@@ -9,7 +9,7 @@
 \renewcommand\refname{Works Cited}
 
 \title{\normalsize How do FIDE chess ratings compare to USCF chess ratings of the top 10 chess players in the US?}
-\date{\normalsize May 2020}
+\date{\normalsize Candidate Number: hyg172 \\ May 2020 \\ Word Count:}
 
 \begin{document}
 \maketitle
@@ -53,7 +53,6 @@ FIDE & USCF\\
   \end{figure}
   
 The USCF top player list and the FIDE list accurate as of December 2019.
-
 
 \begin{figure}[H]
 \centering
@@ -101,9 +100,6 @@ Standard Deviation & Mean\\
 \end{tabular}
     \caption{USCF rating}
 \end{figure}
-
-
-
 
 \subsubsection{2 Sample T-Test}
 Null Hypothesis: There is no significant difference between the mean FIDE rating and the mean USCF rating. FIDE and USCF ratings are indeendent.
@@ -159,7 +155,6 @@ We will use a linear regression to test how well FIDE and USCF ratings relate to
 USCF = 0.964 FIDE + 172
 The linear regression results in an r value of 0.976 and an \(r^{2}\) value of 0.953. This shows that there is a very strong correlation between USCF and FIDE ratings. This is true despite the fact that the average USCF and FIDE ratings have a statistically significant difference.
 
-
 \subsection{Comparing Chess Ratings of the Top 6 Countries}
 \subsubsection{Data}
 \begin{figure}[H]
@@ -183,11 +178,8 @@ SD & 25.75 & 54.40 & 50.67 & 45.92 & 23.15 & 48.65\\
 \end{tabular}
 \caption{Top 6 Countries and their top 10 players}
 \end{figure}
-This data was retreived from FIDE's Top Chess Federations. 
 
-It is interesting to see that Russia is the only country with its top 10 players having a rating higher than 2700.
-
-Standard Deviation (SD) was calculated using a Ti-84 calculator.
+This data was retreived from FIDE's Top Chess Federations. It is interesting to see that Russia is the only country with its top 10 players having a rating higher than 2700. Standard Deviation (SD) was calculated using a Ti-84 calculator.
 
 \begin{figure}[H]
 \centering
@@ -250,6 +242,7 @@ Treatments & 59140.8 & k-1=6-1=5 & 11828.16 & 6.336\\
 Errors & 100814.8 & N-k = 60-6=54 & 1866.94074 & \\
 \end{tabular}
 \end{figure}
+
 Dividing the sum of the squares by the degress of freedom for both the treatments and the errors results in the mean of the squares. Dividing the mean of the squares of treatments by the mean of the squares of errors results in a Fischer value of approximately 6.336.
 
 Test Statistic: F(5,54) = 6.336
@@ -263,13 +256,7 @@ The probabilty of the null hypothesis is 1.0736 x \(10^{-4}\). Therefore the dat
 As we can see, there is a significant difference in the strength of the top 6 chess countries as shown by the ANOVA test. We also found out that a chess federation's rating system can differ from FIDE's ranking system, as shown by the 2 sample test between FIDE and USCF ratings. 
 
 \subsection{Extensions}
-It would be interesting to see whether there is still a significant difference between the top 3 chess country federations.
-
-It would also be interesting to look at countries concentration of grandmasters, international masters, as well as titled players as a measure of strength. 
-
-It would also be interesting to see which country's rating system is most similar to FIDE ratings.
-
-Additionally, it would be interesting to see how online ratings compared to FIDE ratings.
+It would be interesting to see whether there is still a significant difference between the top 3 chess country federations. It would also be interesting to look at countries concentration of grandmasters, international masters, as well as titled players as a measure of strength. It would also be interesting to see which country's rating system is most similar to FIDE ratings. Additionally, it would be interesting to see how online ratings compared to FIDE ratings.
 
 % \newpage
 % \begin{appendix}
